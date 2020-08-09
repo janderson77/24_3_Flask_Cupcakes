@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Cupcakes{% endblock %}
+
+{% block body %}
+<div class="container d-flex flex-column align-items-center">
+    <h1 class="display-1">Cupcakes</h1>
+    <div class="container d-flex flex-row flex-wrap">
+        {% for cupcake in cupcakes %}
+        <div class="card" style="width: 18rem;">
+            <img src="{{cupcake.image}}" class="card-img-top" alt="{{cupcake.flavor}}">
+            <div class="card-body">
+              <h5 class="card-title">{{cupcake.flavor}}</h5>
+              <p class="card-text">{{cupcake.size}}</p>
+              <p class="card=text">{{cupcake.rating}}</p>
+              <a href="#" class="btn btn-primary delete">Delete</a>
+            </div>
+          </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+    
